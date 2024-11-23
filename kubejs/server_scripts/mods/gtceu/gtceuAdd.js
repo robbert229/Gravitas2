@@ -524,6 +524,7 @@ let gtceuAdd = (/** @type {Internal.RecipesEventJS} */ event) => {
     const plantballExtractables = [
         "#tfc:foods", 
         "#tfc:plants",
+        "tfc:straw"
     ];
 
     plantballExtractables.forEach(tag => {
@@ -532,6 +533,15 @@ let gtceuAdd = (/** @type {Internal.RecipesEventJS} */ event) => {
             .itemOutputs('1x gtceu:plant_ball')
             .EUt(2)
             .duration(300)
+    });
+
+    plantballExtractables.forEach(tag => {
+        event.recipes.gtceu.brewery(`tfc_brewer_biomass_${tag.substring(5)}`)
+            .itemInput(tag)
+            .inputFluids(Fluid.of("minecraft:water", 20))
+            .outputFluids(Fluid.of("gtceu:biomass", 20))
+            .EUt(4)
+            .duration(160)
     });
 
     //yeast starter
