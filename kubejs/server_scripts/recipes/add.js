@@ -883,7 +883,7 @@ let recipeAdd = (/** @type {Internal.RecipesEventJS} */ event) => {
   TFCFlowers.forEach((flower) => {
     event.recipes.gtceu
       .greenhouse(`gregitas:${flower}`)
-      .circuit(3)
+      .circuit(1)
       .notConsumable(`tfc:plant/${flower}`)
       .inputFluids(Fluid.of("minecraft:water", 2000))
       .itemOutputs(`32x tfc:plant/${flower}`)
@@ -892,7 +892,7 @@ let recipeAdd = (/** @type {Internal.RecipesEventJS} */ event) => {
 
     event.recipes.gtceu
       .greenhouse(`gregitas:${flower}_boosted`)
-      .circuit(3)
+      .circuit(2)
       .notConsumable(`tfc:plant/${flower}`)
       .itemInputs("4x gtceu:fertilizer")
       .inputFluids(Fluid.of("minecraft:water", 2000))
